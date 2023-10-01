@@ -1,1 +1,3 @@
-console.log("Hello from Index");
+import setUpSearchForm from "./search_form";
+
+setUpSearchForm();
