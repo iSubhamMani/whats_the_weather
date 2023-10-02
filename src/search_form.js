@@ -5,13 +5,18 @@ import Weather from "./weather";
 export default function setUpSearchForm(){
     const submitBtn = document.querySelector('.search-btn');
     const searchField = document.getElementById('search-field');
+    const ripple = document.querySelector('.lds-ripple');
+    const weatherInfo = document.getElementById('weather-info');
 
     submitBtn.addEventListener('click', async (e) => {
         e.preventDefault();
+        weatherInfo.textContent = "";
+        ripple.style.display = 'inline-block';
         const searchQuery = searchField.value;
 
         const response = await fetchCurrentWeather(`${searchQuery}`);
         if(response){
+            ripple.style.display = 'none';
             const data = new Weather(response);
             console.log(data);
             addInfoUI(data);
