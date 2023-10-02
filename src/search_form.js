@@ -1,3 +1,4 @@
+import addInfoUI from "./create_info_ui";
 import fetchCurrentWeather from "./fetch_current_weather";
 import Weather from "./weather";
 
@@ -13,6 +14,7 @@ export default function setUpSearchForm(){
         if(response){
             const data = new Weather(response);
             console.log(data);
+            addInfoUI(data);
         }
     })
 }
