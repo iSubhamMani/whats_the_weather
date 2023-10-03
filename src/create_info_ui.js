@@ -45,7 +45,7 @@ function getInfoUI(data){
 
     const humidity = document.createElement('span');
     humidity.className = 'humidity-txt';
-    humidity.textContent = `${data.humidity} %`;
+    humidity.textContent = `${data.humidity}%`;
 
     const windSpeed = document.createElement('span');
     windSpeed.className = 'wind-speed-txt';
