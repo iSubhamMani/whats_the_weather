@@ -130,8 +130,31 @@ body{
     }
 }
 
+.error-msg{
+    display: none;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--txt-clr-2);
+    font-weight: 400;
+}
+
+.copyright-txt{
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--txt-clr-2);
+    font-weight: 500;
+    margin: 1rem 8px;
+}
+
+.copyright-txt > a{
+    text-decoration: none;
+    color: var(--txt-clr-1);
+}
+
 #weather-info{
     margin: 2rem 20%;
+    flex: 1;
 }
 
 #weather-info-container{
@@ -264,4 +287,3 @@ body{
     font-weight: 500;
     margin-top: 0.2rem;
 }
-
