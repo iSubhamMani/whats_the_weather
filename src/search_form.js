@@ -10,16 +10,19 @@ export default function setUpSearchForm(){
 
     submitBtn.addEventListener('click', async (e) => {
         e.preventDefault();
-        weatherInfo.textContent = "";
-        ripple.style.display = 'inline-block';
         const searchQuery = searchField.value;
 
-        const response = await fetchCurrentWeather(`${searchQuery}`);
-        if(response){
-            ripple.style.display = 'none';
-            const data = new Weather(response);
-            console.log(data);
-            addInfoUI(data);
+        if(searchQuery.trim() !== ""){
+            weatherInfo.textContent = "";
+            ripple.style.display = 'inline-block';
+            
+            const response = await fetchCurrentWeather(`${searchQuery}`);
+            if(response){
+                ripple.style.display = 'none';
+                const data = new Weather(response);
+                console.log(data);
+                addInfoUI(data);
+            }
         }
     })
 }
