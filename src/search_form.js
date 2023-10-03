@@ -1,5 +1,6 @@
 import addInfoUI from "./create_info_ui";
 import fetchCurrentWeather from "./fetch_current_weather";
+import { removeError } from "./handle_error";
 import Weather from "./weather";
 
 export default function setUpSearchForm(){
@@ -14,13 +15,13 @@ export default function setUpSearchForm(){
 
         if(searchQuery.trim() !== ""){
             weatherInfo.textContent = "";
+            removeError();
             ripple.style.display = 'inline-block';
             
             const response = await fetchCurrentWeather(`${searchQuery}`);
             if(response){
                 ripple.style.display = 'none';
                 const data = new Weather(response);
-                console.log(data);
                 addInfoUI(data);
             }
         }
