@@ -1,5 +1,6 @@
 // Return the weather data for a location
 import getWeatherApiKey from './api_key';
+import { showError } from './handle_error';
 
 export default async function fetchCurrentWeather(location){
 
@@ -16,6 +17,6 @@ export default async function fetchCurrentWeather(location){
         return responseJson;
     }
     catch(e){
-        console.log('Something went wrong..');
+        showError();
     }
 }
