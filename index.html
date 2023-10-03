@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's the weather</title>
     <link rel="stylesheet" href="./styles.css">
+
+    <script src="https://kit.fontawesome.com/93eef3d5b6.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav id="nav">
@@ -14,12 +16,20 @@
     <div id="search-container">
         <form id="search-form">
             <div class="search-field">
-                <input type="text" id="search-field" required>
+                <input type="text" id="search-field" required placeholder="Search location">
                 <span class="search-icon"></span>
             </div>
             <button class="search-btn" type="submit">Search</button>
         </form>
     </div>
+
+    <div class="lds-ripple"><div></div><div></div></div>
+
+    <div class="error-msg">
+        <span>Something went wrong..</span>
+    </div>
+
+    <div id="weather-info"></div>
 
     <script src="../dist/main.js"></script>
 </body>
